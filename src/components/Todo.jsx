@@ -202,14 +202,14 @@ const WebcamCapture = (props) => {
     },
     [webcamRef, setImgSrc]
   );
-//-------------------------------------------------------------
+//--------------------------------------save the photo-----------------------
   const savePhoto =  (id, imgSrc) => {
     console.log("savePhoto", imgSrc.length, id);
      addPhoto(id, imgSrc);
     setImgId(id);
     setPhotoSave(true);
   };
-  // -----------------------------------------------------
+  // ---------------------------cancel button--------------------------
 
 
   const cancelPhoto = (id, imgSrc) => {
@@ -223,9 +223,12 @@ const WebcamCapture = (props) => {
       <div className="flash-message">Photo saved! </div>
       )}
       {!imgSrc && (
-        <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
+        <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" 
+        videoConstraints={{ width: "100%", height: "100%", facingMode: "user" }} // <--- ADDED fixing the camera view
+          style={{ width: "100vw", height: "100vh", objectFit: "cover" }} // <--- ADDED
+        />
       )}
-      {imgSrc && <img src={imgSrc} alt= "captured"/>}
+      {imgSrc && <img src={imgSrc} alt= "captured" style={{ width: "100vw", height: "100vh", objectFit: "cover" }} />} 
       <div className="btn-group">
         {!imgSrc && (
           <button
@@ -243,14 +246,14 @@ const WebcamCapture = (props) => {
             className="btn"
             onClick={() => savePhoto(props.id, imgSrc)}
           >
-            Save Photo
+            Save Photo {/**----------------------improvment **/}
           </button>
           <button
           type="button"
           className="btn"
           onClick={() => {
             setImgSrc(null);
-            close();
+            props.Onclose();
           }}
         >
           Close
@@ -280,7 +283,7 @@ const ViewPhoto = ({ id, alt, close }) => {
   return (
     <>
       <div>
-        <img src={photoSrc} alt={alt} />
+        <img src={photoSrc} alt={alt} style={{ width: "100vw", height: "100vh", objectFit: "cover" }}/> {/**--------image improvment--------------improvment **/}
       </div>
       <button
         type="button"

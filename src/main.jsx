@@ -24,7 +24,6 @@ if ('serviceWorker' in navigator) {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App tasks={DATA} />
-    <App />
 
   </React.StrictMode>,
 )
