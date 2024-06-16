@@ -1,0 +1,7 @@
+{
+    "expo": {
+      "name": "My Vite Project",
+      "slug": "my-vite-project",
+      "main": "./main.jsx"
+    }
+  }
