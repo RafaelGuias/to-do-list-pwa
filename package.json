@@ -1,5 +1,5 @@
 {
-  "name": "moz-todo-react",
+  "name": "to-do-list-pwa",
   "version": "0.3.0",
   "private": true,
   "homepage": "https://RafaelGuias.github.io/to-do-list-pwa/",
@@ -23,11 +23,14 @@
     "dexie-react-hooks": "^1.1.7",
     "expo": "^44.0.0",
     "expo-status-bar": "~1.2.0",
+    "leaflet": "^1.9.4",
     "nanoid": "^5.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
     "react-native": "0.64.3",
     "react-native-web": "0.17.1",
+    "react-toastify": "^10.0.5",
     "react-transition-group": "^4.4.5",
     "react-webcam": "^7.2.0",
     "reactjs-popup": "^2.0.6"
