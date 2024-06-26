@@ -44,7 +44,7 @@ export default function App() {
       console.log("Notifications are not supported in this browser.");
     }
   }, []);
-
+//----------------------------------Geolocation integration 1-----------------------------------
   const geoFindMe = () => {
     if (!navigator.geolocation) {
       console.log("Geolocation is not supported by your browser");
@@ -53,7 +53,7 @@ export default function App() {
       navigator.geolocation.getCurrentPosition(success, error);
     }
   };
-
+///-----------------------------challenge 1-----------------------------------
   const fetchWeatherData = async (latitude, longitude) => {
     try {
       const apiKey = 'cc537ce9f7e6b5c9bfff84cbe8731517';
@@ -93,7 +93,7 @@ export default function App() {
   const error = () => {
     console.log("Unable to retrieve your location");
   };
-
+/// -------------------------------Improvement -----------------------------------
   const showNotification = (todoText) => {
     console.log("Checking notification support and permission...");
     if ("Notification" in window) {
@@ -110,7 +110,7 @@ export default function App() {
       console.log("Notifications are not supported in this browser.");
     }
 
-    // Also show toast notification for GUI feedback
+    // Also show toast notification for GUI feedback- improvement-----------------------------
     toast(`You have added a new TODO: ${todoText}`, {
       position: "top-right",
       autoClose: 5000,
@@ -145,12 +145,12 @@ export default function App() {
     });
     setTasks(updatedTasks);
   }
-
+//----------------------------------CRUD delete Task-----------------------------------
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
   }
-
+//-----------------------------------CRUD edit task-----------------------------------
   function editTask(id, newName) {
     const editedTaskList = tasks.map((task) => {
       if (id === task.id) {
@@ -188,7 +188,7 @@ export default function App() {
     });
     setTasks(photoedTaskList);
   }
-
+//-----------------------------------delete photo-----------------------------------
   function deletePhoto(id) {
     const updatedTasks = tasks.map((task) => {
       if (id === task.id) {
@@ -199,7 +199,7 @@ export default function App() {
     setTasks(updatedTasks);
     db.photos.where("id").equals(id).delete();
   }
-
+//-----------------------------------READ functionality-----------------------------------
   const taskList = tasks?.filter(FILTER_MAP[filter]).map((task) => (
     <Todo
       id={task.id}
@@ -223,7 +223,7 @@ export default function App() {
       setFilter={setFilter}
     />
   ));
-
+//----------------------------------CRUD Add Task----------------------------------
   function addTask(name) {
     const id = "todo-" + nanoid();
     const newTask = {
@@ -248,7 +248,7 @@ export default function App() {
       listHeadingRef.current.focus();
     }
   }, [tasks.length, prevTaskLength]);
-
+//----------------------------------GeoLocation function 2----------------------------------
   return (
     <div className="todoapp stack-large">
       <h1>Todo List</h1>
@@ -258,7 +258,7 @@ export default function App() {
         {headingText}
       </h2>
       <ul
-        aria-labelledby="list-heading"
+        aria-labelledby="list-heading"  // improvement ARIA --------------------------------------
         className="todo-list stack-large stack-exception"
         role="list"
       >

@@ -39,7 +39,7 @@ export default function Todo(props) {
     console.log("Notification for new To-do:", newName);
     showNotification(newName);
   }
-
+//   ----------------------------------------------improvenemnt----------------------------
   const showNotification = (todoText) => {
     console.log("Checking notification support and permission...");
     if ("Notification" in window) {
@@ -209,7 +209,7 @@ Todo.propTypes = {
   deletePhoto: PropTypes.func.isRequired,
 };
 
-// W07 CAM - New Component WebcamCapture
+// W07 CAM - New Component WebcamCapture -----------Camera function 1-----------------
 const WebcamCapture = (props) => {
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
@@ -322,7 +322,7 @@ const WebcamCapture = (props) => {
   );
 };
 
-// W07 CAM - New Component ViewPhoto
+// W07 CAM - Flash messages-------------------------------------------------------
 const ViewPhoto = ({ id, alt, close }) => {
   const photoSrc = GetPhotoSrc(id);
   if (!photoSrc) {

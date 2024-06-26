@@ -5,9 +5,9 @@ import { useLiveQuery } from "dexie-react-hooks";
 export const db = new Dexie("todo-photos");
 
 db.version(1).stores({
-  photos: "id", // Primary key, don't index photos
+  photos: "id", // Primary key
 });
-
+//-------------------------------Camera function 2------------------------------
 async function addPhoto(id, imgSrc) {
   console.log("addPhoto", imgSrc.length, id);
   try {
